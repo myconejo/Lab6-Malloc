@@ -19,10 +19,15 @@ Makefile
 
 
 config.h	Configures the malloc lab driver
+
 fsecs.{c,h}	Wrapper function for the different timer packages
+
 clock.{c,h}	Routines for accessing the Pentium and Alpha cycle counters
+
 fcyc.{c,h}	Timer functions based on cycle counters
+
 ftimer.{c,h}	Timer functions based on interval timers and gettimeofday()
+
 memlib.{c,h}	Models the heap and sbrk function
 
 
