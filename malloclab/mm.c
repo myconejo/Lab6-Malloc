@@ -1,7 +1,16 @@
 /*
- * mm.c - segregated free list implentated allocation (2021/11/23 19:40)
+ * mm.c - memory allocation by sorted segregated free lists
+ * Date: 2021/11/23
+ * Name: Minyoung Choi
  * Score: 44.0 (correctness) + 52.7 (performance) = 96.7
  */
+
+/*
+ * Programming Rules 
+ * 1. Do not define global or static compound data structures (struct, array, union ...) 
+ * 2. Do not use memory management related library calls or system calls (mmap, malloc, free, brk, ...) 
+ */
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
@@ -51,8 +60,8 @@
 // global variables
 static char *heap_listp = 0; // pointer to the 1st block
 
-// segregated free list. seglistk means k-th seglist. 
-// from 0~7, 32B interval
+// segregated free lists: seglistk means k-th seglist. 
+// for k = 0~7, 32B interval
 static void *seglist0; // 1~31
 static void *seglist1; // 32~63
 static void *seglist2; // 64~95
@@ -61,7 +70,7 @@ static void *seglist4; // 128~159
 static void *seglist5; // 160~191
 static void *seglist6; // 192~223
 static void *seglist7; // 224~255
-// from 8~24, power of 2 interval
+// for k = 8~24, power of 2 interval
 static void *seglist8; // 256B ~
 static void *seglist9; // 512B ~
 static void *seglist10; // 1KB ~
