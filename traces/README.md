@@ -1,9 +1,9 @@
-# LAB 6: Malloc Lab
-
+# LAB 6: Malloc Lab Traces
+ 
 This directory contains traces of allocate and free requests that are
 used by the test harness to evaluate the student malloc packages.
 
-# 1. Files
+## 1. Files
 
 *.rep		Original traces
 *-bal.rep	Balanced versions of the original traces
@@ -15,13 +15,13 @@ Note: A "balanced" trace has a matching free request for each allocate
 request.
 
 
-# 2. Building the traces
+## 2. Building the traces
 
 To rebuild the traces from scratch, type 
 
 	unix> make
 
-# 3. Trace file format
+## 3. Trace file format
 
 A trace file is an ASCII file. It begins with a 4-line header:
 
@@ -60,7 +60,7 @@ is balanced. It has a recommended heap size of 20000 bytes (ignored),
 three distinct request ids (0, 1, and 2), eight different requests
 (one per line), and a weight of 1 (ignored).
 
-# 4. Description of traces
+## 4. Description of traces
 
 * short{1,2}-bal.rep
 
