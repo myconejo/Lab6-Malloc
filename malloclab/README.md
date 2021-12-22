@@ -1,6 +1,6 @@
 # LAB 6: Malloc Lab
 
-## Main Files
+## 1. Main Files
 
 ```bash
 mm.{c,h} - Your solution malloc package.
@@ -12,7 +12,7 @@ short{1,2}-bal.rep - Two tiny tracefiles to help you get started.
 Makefile - Builds the driver
 ```
 
-## Other support files for the driver
+## 2. Other support files for the driver
 
 - `config.h` Configures the malloc lab driver
 
@@ -27,7 +27,7 @@ Makefile - Builds the driver
 - `memlib.{c,h}` Models the heap and sbrk function
 
 
-## Testing Malloc with Mdriver
+## 3. Testing Malloc with Mdriver
 
 To build the driver, type "make" to the shell.
 
